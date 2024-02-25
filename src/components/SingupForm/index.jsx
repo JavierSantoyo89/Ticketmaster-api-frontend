@@ -1,6 +1,9 @@
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
 import style from "./form.module.css";
+
+    //*********************** Signup form *********************/
+//*********************** Show form to signup *********************/
 const SignupForm = () => {
   const { register, handleSubmit, reset } = useForm();
   // const [name, setName] = useState("");

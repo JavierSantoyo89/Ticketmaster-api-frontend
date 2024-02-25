@@ -1,3 +1,7 @@
+     //*********************/ wrapPromise *********************/
+//*********************/  Necessary for Suspence  *********************/
+
+
 const wrapPromise = (promise) => {
     let status = 'pending';
     let result;

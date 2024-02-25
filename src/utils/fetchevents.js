@@ -1,3 +1,5 @@
+      //*********************/  Fetch events  *********************/
+//*********************/  Necessary for global fetch  *********************/
 import wrapPromise from "./wrapPromise";
 
 const fetchEventDetail = async (eventId) => {

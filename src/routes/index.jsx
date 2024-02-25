@@ -1,14 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense } from "react";
 
 import Detail from "../views/Detail/Detail";
 import Home from "../views/Home/Home";
 import Error404 from "../views/Error404/Error404";
-
 import Profile from "../views/Profile/Profile";
 import LikedEvents from "../views/Profile/components/likedEvents/LikedEvents";
 import MyInfo from "../views/Profile/components/myinfo/MyInfo";
-import { Suspense } from "react";
 import Loading from "../components/Loading/Loading";
+
+//********************** Routes *********************/
 
 const router = createBrowserRouter([
   {

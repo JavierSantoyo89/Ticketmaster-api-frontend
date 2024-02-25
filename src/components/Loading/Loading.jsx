@@ -1,4 +1,8 @@
 import style from "./Loading.module.css";
+
+        //***********************  Loading view  *********************/
+//***********************  Show this view when loading  *********************/
+
 const Loading = () => {
   return (
     <div>

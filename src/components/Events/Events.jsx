@@ -2,6 +2,11 @@ import EventItem from "./components/EventItem/EventItem";
 import { useNavigate } from "react-router-dom";
 import { memo } from "react";
 
+
+//************************* Events view *********************/
+//************************* Show all events *********************/
+
+
 // eslint-disable-next-line react/prop-types
 function Events({ searchTerm, events }) {
   const navigate = useNavigate();

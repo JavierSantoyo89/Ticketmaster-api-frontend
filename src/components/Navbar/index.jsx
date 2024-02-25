@@ -1,9 +1,11 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
+
+      //*********************  Navbar  *********************/
+//*********************/  Navbar component  *********************/
 // eslint-disable-next-line react/prop-types
 const Navbar = forwardRef(({ onSearch }, ref) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [search, setSearch] = useState("");
   //  let handleClickClear = () => {
   //     setSearch();

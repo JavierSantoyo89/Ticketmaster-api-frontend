@@ -1,28 +1,30 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 // import SignupForm from "../../components/SingupForm";
 // import Lista from '../../components/Lista/lista';
+// import useEventsData from "../../hooks/useEventsData";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Events from "../../components/Events/Events";
 import Navbar from "../../components/Navbar";
 import Loading from "../../components/Loading/Loading";
-// import useEventsData from "../../hooks/useEventsData";
 import styles from "./Home.module.css";
 import useEventsResults from "../../state/events-results";
-// const Home = () => {
-//   <div>
-//     <h1>home</h1>
-//   </div>;
-// };
-// export default Home;
+
+
+         //*********************/ Home view *********************/
+//*********************/ Show this view on main page *********************/
+//********************* Show all events on this page *********************/
 
 function Home() {
-  const {data, isLoading, error, fetchEvents} = useEventsResults();
-  const events = useMemo(() => data?._embedded?.events || [], [data?._embedded?.events]);
+  const { data, isLoading, error, fetchEvents } = useEventsResults();
+  const events = useMemo(
+    () => data?._embedded?.events || [],
+    [data?._embedded?.events]
+  );
   const page = useMemo(() => data?.page || {}, [data?.page]);
-  const [contar, setContar] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const containerRef = useRef();
   const fetchMyEventsRef = useRef();
+  // const [contar, setContar] = useState(0);
   // const {  isLoading, error,    fetchEvents, page   } = useEventsData();
   // const [isToggle, setIsToggle] = useState(false);
 
@@ -34,24 +36,24 @@ function Home() {
     // console.log("El paramatero es: " + term);
   };
 
+  const handlePageClick = useCallback(
+    ({ selected }) => {
+      console.log(selected);
+      fetchEvents(`&keyword=${searchTerm}&page=${selected}`);
+    },
+    [searchTerm, fetchEvents]
+  );
 
-  const handlePageClick = useCallback(({ selected }) => {
-    console.log(selected);
-    fetchEvents(`&keyword=${searchTerm}&page=${selected }`);
-  }, [searchTerm, fetchEvents]);
-
-
-  // const fetchMyEvents = () => fetchEvents()  
-    fetchMyEventsRef.current = fetchEvents;
+  // const fetchMyEvents = () => fetchEvents()
+  fetchMyEventsRef.current = fetchEvents;
   useEffect(() => {
     // fetchEvents();
-    console.log('useEffect');
-        fetchMyEventsRef.current();
+    fetchMyEventsRef.current();
   }, []);
 
-  setTimeout(() => {
-    setContar(contar + 1);
-  }, 1000);
+  // setTimeout(() => {
+  //   setContar(contar + 1);
+  // }, 1000);
 
   const renderEvents = () => {
     //   isLoading ? (<Loading />) : ( <Events searchTerm={searchTerm} events={events} />);
@@ -90,7 +92,7 @@ function Home() {
     <>
       {/* <p>Contador: {contar}</p> */}
       <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
-<h1> Cartelera de eventos</h1>
+      <h1> Cartelera de eventos</h1>
       {/* contar < 10 ? <Lista/> : <Navbar/> */}
       {renderEvents()}
       {/* <Lista /> */}

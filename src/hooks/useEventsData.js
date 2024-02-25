@@ -1,6 +1,9 @@
 // import useEventsResults from "../state/events-results";
 // import eventsJSON from "../data/events.json";
 import { useState } from "react";
+
+     //*********************  Events data store  *********************/
+//*********************/  Necessary for global fetch  *********************/
 const useEventsData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

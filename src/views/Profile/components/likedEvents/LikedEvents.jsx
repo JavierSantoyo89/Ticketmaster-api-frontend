@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LIKED_EVENTS_STORAGE_KEY } from "../../../../utils/constants";
 import EventItem from "../../../../components/Events/components/EventItem/EventItem";
+
+   //*********************/ Liked Events view *********************/
+//*********************/  Show all liked events  *********************/
+
 const LikedEvents = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState({});
@@ -25,7 +29,7 @@ const LikedEvents = () => {
         // const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_TICKETMASTER_API_KEY}&countryCode=MX${params?.length ? params : ''}`);
         // const data = await response.json();
         setEvents(results);
-        console.log(likedEvents);
+        // console.log(likedEvents);
       } catch (e) {
         // console.log(error);
         setError(e);
@@ -37,7 +41,7 @@ const LikedEvents = () => {
   }, []);
 
   const handleEventItemClick = (eventid) => {
-    console.log(`event clicked: ${eventid}`);
+    // console.log(`event clicked: ${eventid}`);
     navigate(`/detail/${eventid}`);
   };
   if (Object.keys(error).length > 0) {

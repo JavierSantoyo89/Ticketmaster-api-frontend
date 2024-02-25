@@ -1,4 +1,8 @@
 import { Component } from "react";
+
+         //********************* Error Boundery *********************/
+//*********************  Show this view when exist errors  *********************/
+
 class ErrorBoundary extends Component {
     constructor(props) {
       super(props);

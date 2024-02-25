@@ -4,6 +4,9 @@ import hearthFilled from "../../../../assets/hearth-filled.png";
 import hearthUnfilled from "../../../../assets/hearth-unfilled.png";
 import useLikeEvents from "../../../../hooks/useLiveEvents";
 
+
+//***********************  EventItem  *********************/
+//*********************/  EventItem component  *********************/
 // eslint-disable-next-line react/prop-types
 function EventItem({ info, id, name, image, onEventClick }) {
   const { isEventLiked, toggleEventLike } = useLikeEvents(id);

@@ -30,9 +30,13 @@ function EventItem({ info, id, name, image, onEventClick }) {
       <div className={style.eventItemInfoContainer}>
         <h4 className={style.eventName}>{name}</h4>
         <p className={style.eventInfo}>{info}</p>
-        <button onClick={handleSeeMoreClick} className={style.seeMoreBtn}>
+        <button
+          onClick={handleSeeMoreClick}
+          // className={style.seeMoreBtn}
+          className={style.button}
+        >
           {/* <Link to={`/detail/${id}`}>Ver mas</Link> */}
-          Ver mas
+          <span>Ver mas</span>
         </button>
       </div>
     </div>

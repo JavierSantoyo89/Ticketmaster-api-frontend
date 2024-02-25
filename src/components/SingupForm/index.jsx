@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import style from "./form.module.css";
 const SignupForm = () => {
   const { register, handleSubmit, reset } = useForm();
   // const [name, setName] = useState("");
@@ -25,8 +25,12 @@ const SignupForm = () => {
     // console.log("Submit", { name, age, adress, zipcode, phone });
   };
   return (
-    <form onSubmit={handleSubmit(handleSubmitForm)}>
+
+    <div className={style.formContainer}>
+
+    <form onSubmit={handleSubmit(handleSubmitForm)} className={style.form}>
       <h1>Signup</h1>
+      <div className={style.formGroup}>
       <label>
         name
         <input {...register("name", {required: true})} />
@@ -53,15 +57,18 @@ const SignupForm = () => {
           {...register("phone", {required: true})}
           // value={phone}
           // onChange={(e) => setPhone(e.target.value)}
-        />
+          />
       </label>
+      </div>
       <div>
-        <button type="button" onClick={handleClearClick}>
+        <button type="button" onClick={handleClearClick} className={style.formSubmintButton}>
           Clear
         </button>
         <button>Submit</button>
       </div>
     </form>
+
+          </div>
   );
 };
 export default SignupForm;

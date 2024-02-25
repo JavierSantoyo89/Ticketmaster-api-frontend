@@ -34,7 +34,6 @@ function Events({ searchTerm, events }) {
 
   return (
     <div>
-      Eventos
       {renderEvents()}
       {/* {eventsComponent} */}
       <EventItem/>

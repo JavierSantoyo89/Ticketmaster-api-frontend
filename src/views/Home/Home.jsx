@@ -24,7 +24,7 @@ function Home() {
   const containerRef = useRef();
   const fetchMyEventsRef = useRef();
   // const {  isLoading, error,    fetchEvents, page   } = useEventsData();
-  const [isToggle, setIsToggle] = useState(false);
+  // const [isToggle, setIsToggle] = useState(false);
 
   fetchMyEventsRef.current = fetchEvents;
 
@@ -64,7 +64,7 @@ function Home() {
     } else {
       return (
         <div>
-          <button onClick={() => setIsToggle(!isToggle)}>{isToggle ? "On'" : "Off"}</button>
+          {/* <button onClick={() => setIsToggle(!isToggle)}>{isToggle ? "On'" : "Off"}</button> */}
           <Events searchTerm={searchTerm} events={events} />
           <ReactPaginate
             className={styles.pagination}
@@ -88,10 +88,10 @@ function Home() {
 
   return (
     <>
-      <p>Contador: {contar}</p>
-
-      {/* contar < 10 ? <Lista/> : <Navbar/> */}
+      {/* <p>Contador: {contar}</p> */}
       <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
+<h1> Cartelera de eventos</h1>
+      {/* contar < 10 ? <Lista/> : <Navbar/> */}
       {renderEvents()}
       {/* <Lista /> */}
       {/* <SignupForm/> */}

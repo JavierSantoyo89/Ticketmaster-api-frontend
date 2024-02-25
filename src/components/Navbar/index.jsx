@@ -1,6 +1,6 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 import { Link } from "react-router-dom";
-
+import style from "./navbar.module.css";
 // eslint-disable-next-line react/prop-types
 const Navbar = forwardRef(({ onSearch }, ref) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -28,38 +28,27 @@ const Navbar = forwardRef(({ onSearch }, ref) => {
   return (
     <div
       ref={ref}
-      style={{
-        marginBottom: 14,
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
+      // style={{
+      //   marginBottom: 14,
+      //   width: "100%",
+      //   display: "flex",
+      //   justifyContent: "center",
+      // }}
+      className={style.container}
     >
-      <div style={{ flex: 1, display: "flex" }}>
-        <p style={{ fontSize: 18, fontWeight: 'bold'}}>mi boletera</p>
+      <div className={style.titleContainer}>
+        <p className={style.pTitle}>Ticketmaster pirata...</p>
       </div>
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-        }}
+      <div className={style.inputcontainer}
       >
         <input
-          style={{
-            fontSize: 16,
-            padding: "6px 12px",
-            borderRadius: 4,
-            border: "none",
-            width: 200,
-          }}
+          type="text"
           placeholder="Busca tu evento favorito"
           onChange={handleInputChange}
           onKeyDown={handleInputKeyDown}
           value={search}
         />
-        <Link to='/profile/my-info' style={{marginLeft:24, color: '#fff', textDecoration: 'none'}}>Mi perfil </Link>
+        <Link to='/profile/my-info' className={style.perfilLink}>Mi perfil </Link>
       </div>
     </div>
   );

@@ -33,9 +33,13 @@ export default function MyInfo() {
   };
   // console.log(errors);
   return (
-    <div>
-      <h2>MyInfo</h2>
+    <div className={style.myInfo}>
+
+    <div className={style.formContainer}>
+      <h2>My info</h2>
       <form onSubmit={handleSubmit(handleFormsubmit)} className={style.form}>
+       
+      <div className={style.formGroup}>
         <label className={style.label}>
           name
           <input
@@ -54,7 +58,7 @@ export default function MyInfo() {
             type="email"
             className={style.input}
             {...register("email", { required: true, min: 1, max: 120 })}
-          />
+            />
         </label>
         <label className={style.label}>
           Age
@@ -69,10 +73,12 @@ export default function MyInfo() {
             })}
           />
         </label>
-        <button className={style.button} type="submit">
+      </div>
+        <button  className={style.formSubmintButton} type="submit">
           Save
         </button>
       </form>
     </div>
+            </div>
   );
 }

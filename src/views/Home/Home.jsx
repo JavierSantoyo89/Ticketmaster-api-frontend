@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar";
 import Loading from "../../components/Loading/Loading";
 import styles from "./Home.module.css";
 import useEventsResults from "../../state/events-results";
+import { Link } from "react-router-dom";
 
 
          //*********************/ Home view *********************/
@@ -97,6 +98,7 @@ function Home() {
       {renderEvents()}
       {/* <Lista /> */}
       {/* <SignupForm/> */}
+      <Link to="https://javiersantoyo.dev/">Portafolio</Link>
     </>
   );
 }
